@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+  margin: none;
+
+}
+
+body {
+  text-align: center;
+}
