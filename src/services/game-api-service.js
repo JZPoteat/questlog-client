@@ -1,6 +1,8 @@
 import TokenService from './TokenService'
 import config from '../config'
-
+const changePriorityFromNumToString = game => {
+    console.log('changing!')
+}
 const GameApiService = {
   getGames() {
     return fetch(`${config.API_ENDPOINT}/games`, {

@@ -14,6 +14,19 @@ export default class ExpandedGame extends Component {
         redirect: false
     }
 
+    changeImportanceFromNumToString = (game) => {
+            if(Number(game.importance) === 1) {
+                game.importance = 'Low';
+            }
+            else if(Number(game.importance) === 2) {
+                game.importance = 'Medium';
+            }
+            else if(Number(game.importance) === 3) {
+                game.importance = 'High';
+            }
+            return game;
+    }
+
     setGame = game => {
         console.log('setting state');
         this.setState({
@@ -85,6 +98,7 @@ export default class ExpandedGame extends Component {
         const gameId = this.props.match.params.id
         console.log(gameId)
         GameApiService.getGame(gameId)
+        .then(this.changeImportanceFromNumToString)
         .then(this.setGame)
     }
     

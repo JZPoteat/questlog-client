@@ -27,8 +27,9 @@ export default class Login extends Component {
             TokenService.saveAuthToken(res.authToken)
             this.handleLoginSuccess()
         })
-    
-
+        .catch(res => {
+            this.setState({ error: res.error })
+        })
     }
 
     render() {
@@ -38,7 +39,7 @@ export default class Login extends Component {
             className='login_form'
             onSubmit={this.handleSubmit}
             >
-            <p role='alert'>{error}</p>
+            <p role='alert' className='red'>{error}</p>
             <div className='user_name'>
                 <label htmlFor='login_user_name'>
                     User name

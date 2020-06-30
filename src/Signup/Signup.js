@@ -9,25 +9,36 @@ export default class Signup extends Component {
         error: null
     }
 
+    handleRegistrationSuccess = user => {
+        const { history } = this.props
+        history.push('/login')
+      }
+
     handleSubmit = e => {
         e.preventDefault()
-        const {user_name, full_name, password} = e.target
-        this.setState({ error: null })
-        AuthApiService.postUser({
-            user_name: user_name.value,
-            full_name: full_name.value,
-            password: password.value
-        })
-            .then(user => {
-                user_name.value = ''
-                full_name.value = ''
-                password.value = ''
+        const {user_name, full_name, password, retype_password } = e.target
+        if(password.value !== retype_password.value) 
+            this.setState({
+                error: 'Passwords do not match.  Please try again.'
             })
-            .catch(res => {
-                this.setState({error: res.error})
+        else {
+            this.setState({ error: null })
+            AuthApiService.postUser({
+                user_name: user_name.value,
+                full_name: full_name.value,
+                password: password.value
             })
+                .then(user => {
+                    user_name.value = ''
+                    full_name.value = ''
+                    password.value = ''
+                    this.handleRegistrationSuccess()
+                })
+                .catch(res => {
+                    this.setState({error: res.error})
+                })
+        }  
     }
-
     render() {
         const { error } = this.state
         return (
@@ -35,7 +46,7 @@ export default class Signup extends Component {
             className='signup_form'
             onSubmit={this.handleSubmit}
             >
-            <p role='alert'>{error}</p>
+            <p role='alert' className='red'>{error}</p>
             <div className='user_name'>
                 <label htmlFor='signup_user_name'>
                     User name
