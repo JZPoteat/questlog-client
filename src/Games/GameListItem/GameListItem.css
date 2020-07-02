@@ -1,0 +1,46 @@
+
+.game_list_item_low, .game_list_item_medium, .game_list_item_high {
+    display: inline-block;
+    padding: 15px;
+    border: 7px solid transparent;
+    padding: .5rem;
+    border-radius: 15px;
+    border-image-slice: 5;
+    margin-bottom: 25px;
+    max-width: 175px;
+
+}
+
+.game_list_item_low {
+    border-image-source: linear-gradient(to left, rgb(255, 26, 26) 0%, rgb(250, 174, 184) 100%); 
+}
+
+.game_list_item_medium {
+    border-image-source: linear-gradient(to left, rgb(248, 251, 17) 0%, rgb(255, 247, 203) 100%); 
+}
+
+.game_list_item_high {
+
+    border-image-source: linear-gradient(to left, rgb(79, 255, 26) 0%, rgb(237, 255, 235) 100%); 
+
+}
+
+
+
+.game_list_item_low:hover, .game_list_item_medium:hover, .game_list_item_high:hover {
+    opacity: 0.5;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .game_list_item_low, .game_list_item_medium, .game_list_item_high {
+        margin: 30px;
+    }
+
+    .nav_box {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

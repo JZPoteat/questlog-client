@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../services/TokenService'
 import './Header.css'
+import joystick from '../joystick-removebg-preview.png'
+import fileContext from '../context/FileContext'
+
 export default class Header extends Component {
+
+
+    static contextType = fileContext
 
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
-        this.props.handleLogout()
+        this.context.handleLogout()
       }
     renderLogoutLink = () => {
         return (
@@ -24,7 +30,7 @@ export default class Header extends Component {
         return (
           <div className='Header__not-logged-in'>
             <Link
-              to='/login'>
+              to='/login' className='login_signup_button'>
               Login
             </Link>
             <Link
@@ -36,18 +42,22 @@ export default class Header extends Component {
       }
     render() {
         return (
-            <div className='Header'>
-                <Link to='/'>
-                    <h1 className='quest_log'>QuestLog</h1>
-                </Link>
-                <nav className='login_signup_buttons'>
-                    {this.props.isLoggedIn
+            <section className='Header'>
+                <section className='login_signup_buttons'>
+                    {this.context.isLoggedIn
                         ? this.renderLogoutLink()
                         : this.renderLoginLink()
                     }
-                </nav>
-
-            </div>
+                </section>
+                <section className='logo_and_title'>
+                <section className='logo_container'>
+                  <img src={joystick} alt='Joystick logo' id='joystick-logo'/>
+                </section>
+                <Link to='/'>
+                    <h1 className='quest_log_header'>QuestLog</h1>
+                </Link>
+                </section>
+            </section>
         )
     }
 }

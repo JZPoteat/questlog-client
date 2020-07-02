@@ -1,0 +1,86 @@
+.quest_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sort_options {
+    width: 150px;
+    max-height: 35px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+
+}
+.sort_options, option {
+    color: black;
+}
+
+
+.welcome_statement {
+    font-size: 36px;
+}
+
+.add_quest_button {
+    background-image: linear-gradient(to bottom, rgba(1, 110, 92, 0.233), rgb(132, 0, 221));
+    border-radius: 15%;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+option:hover {
+    background-color: lightblue;
+}
+
+#search_label, #sort_label {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+
+.sort_search_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sort_box, .search_box {
+    display: flex;
+    justify-content: center;
+}
+
+.sort_box {
+    justify-content: center;
+}
+
+
+#search_bar {
+    max-height: 40px;
+    margin-top: 20px;
+    color: black;
+}
+
+@media only screen and (min-width: 700px) {
+    .quest_list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: auto;
+    }
+}
+
+
+@media only screen and (min-width: 900px) {
+    .sort_search_box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+    }
+    .sort_box, .search_box {
+        max-width: 300px;
+    }
+}

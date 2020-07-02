@@ -2,15 +2,25 @@ import React, { Component } from 'react'
 import TokenService from '.././services/TokenService'
 import AuthApiService from '../services/auth-api-service'
 import './Login.css'
+// import UIfx from 'uifx'
+// import loginTrack from '../loginTrack.mp3'
+import fileContext from '../context/FileContext'
 
 export default class Login extends Component {
+
+    static contextType = fileContext
 
     state = {
         error: null
     }
+
+
+
+
     handleLoginSuccess = () => {
+        this.context.handleLogin()
         const { location, history } = this.props
-        const destination = (location.state || {}).from || '/'
+        const destination = (location.state || {}).from || '/games'
         history.push(destination)
     }
     handleSubmit = ev => {
@@ -42,17 +52,17 @@ export default class Login extends Component {
             <p role='alert' className='red'>{error}</p>
             <div className='user_name'>
                 <label htmlFor='login_user_name'>
-                    User name
+                    Username
                 </label>
-                <input required type='text' name='user_name' id='login_user_name' />
+                <input required type='text' name='user_name' id='login_user_name' className='text_area'/>
             </div>
             <div className='password'>
                 <label htmlFor='login_password'>
-                    Password 
+                    Password
                 </label>
-            <input required type='password' name='password' id='login_password' />
+            <input required type='password' name='password' id='login_password' className='text_area' />
             </div>
-            <button type='submit'>Login</button> 
+            <button type='submit' className='submit_button'>Login</button> 
             </form>
         )
     }

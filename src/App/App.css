@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  color: white;
+  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 ul {
@@ -16,8 +20,16 @@ li {
 
 body {
   text-align: center;
+  background: url('../background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 .red {
-  color: red
+  color: red;
+  font-weight: bold;
+  font-size: 28px;
 }

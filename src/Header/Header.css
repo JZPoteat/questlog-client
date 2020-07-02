@@ -2,3 +2,64 @@
     box-sizing: border-box;
 }
 
+#joystick-logo {
+    mix-blend-mode: multiply;
+    width: 100px;
+    height: 100px;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -webkit-box-shadow: none;
+
+}
+
+.quest_log_header {
+    animation: fadeIn ease 1s;
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+}
+
+.quest_log_header:hover {
+    color: rgb(255, 241, 47)
+}
+
+.login_signup_button:hover {
+    color: rgb(32, 233, 5);
+}
+
+.logo_container {
+    position: relative;
+    animation-name: myanimation;
+    animation-duration: 0.5s;
+    top: 25px;
+}
+
+
+.login_signup_buttons {
+    margin-left: 60%;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.login_signup_button {
+    margin-right: 20px;
+}
+
+
+@keyframes myanimation {
+    0% {top: -75px;}
+    25% {top: -50px;}
+    50% {top: -25px;}
+    75% {top: 0px;}
+    100% {top: 25px;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

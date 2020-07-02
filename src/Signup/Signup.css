@@ -1,0 +1,30 @@
+.text_area {
+    margin-left: 10px;
+}
+
+label {
+    max-width: 125px;
+}
+
+.retype_password, .user_name, .full_name, .password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#signup_retype_password {
+    max-height: 40px;
+    margin-left: 5px;
+}
+
+#signup_full_name, #signup_password {
+    margin-left: 13px;
+}
+.signup_button {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    border-radius: 15%;
+    height: 45px;
+    width: 100px;
+    font-size: 24px;
+}

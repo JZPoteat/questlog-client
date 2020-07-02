@@ -1,9 +1,9 @@
 import TokenService from './TokenService'
 import config from '../config'
 
-const GameApiService = {
-  getGames() {
-    return fetch(`${config.API_ENDPOINT}/games`, {
+const ReviewApiService = {
+  getReviews() {
+    return fetch(`${config.API_ENDPOINT}/reviews`, {
       headers: {
         'Authorization': `bearer ${TokenService.getAuthToken()}`,
       },
@@ -14,8 +14,8 @@ const GameApiService = {
           : res.json()
       )
   },
-  getGame(gameId) {
-    return fetch(`${config.API_ENDPOINT}/games/${gameId}`, {
+  getReview(reviewId) {
+    return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
@@ -26,8 +26,8 @@ const GameApiService = {
           : res.json()
       )
   },
-  postGame(title, priority = 1, est_time, loc, notes) {
-    return fetch(`${config.API_ENDPOINT}/games`, {
+  postReview(title, rating, time_played, review) {
+    return fetch(`${config.API_ENDPOINT}/reviews`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -35,10 +35,9 @@ const GameApiService = {
         },
         body: JSON.stringify({
             title: title,
-            importance: Number(priority),
-            est_time: Number(est_time),
-            loc: loc,
-            notes: notes
+            rating: Number(rating),
+            time_played: Number(time_played),
+            review: review
         }),
       })
         .then(res =>
@@ -47,8 +46,8 @@ const GameApiService = {
             : res.json()
         )
   },
-  updateGame(gameId, title, priority, est_time, loc, notes) {
-    return fetch(`${config.API_ENDPOINT}/games/${gameId}`, {
+  updateReview(reviewId, title, rating, time_played, review) {
+    return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json',
@@ -56,10 +55,9 @@ const GameApiService = {
         },
         body: JSON.stringify({
             title: title,
-            importance: Number(priority),
-            est_time: Number(est_time),
-            loc: loc,
-            notes: notes
+            rating: Number(rating),
+            time_played: Number(time_played),
+            review: review
         }),
       })
         .then(res =>
@@ -68,8 +66,8 @@ const GameApiService = {
             : 0
         )
   },
-  deleteGame(gameId) {
-    return fetch(`${config.API_ENDPOINT}/games/${gameId}`, {
+  deleteReview(reviewId) {
+    return fetch(`${config.API_ENDPOINT}/reviews/${reviewId}`, {
       method: 'DELETE',
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
@@ -84,4 +82,4 @@ const GameApiService = {
   
 }
 
-export default GameApiService
+export default ReviewApiService

@@ -1,0 +1,119 @@
+.edit_button_low, .edit_button_medium, .edit_button_high {
+    margin-left: 25px;
+    width: 70px;
+}
+
+.edit_button_low {
+    background-image: linear-gradient(to left, rgb(255, 26, 26) , rgb(247, 251, 0))
+}
+
+.edit_button_medium {
+    background-image: linear-gradient(to left, rgb(251, 235, 0), rgb(226, 0, 246))
+}
+
+.edit_button_high {
+    background-image: linear-gradient(to left, rgb(79, 255, 26) , rgb(0, 225, 255))
+}
+
+.return_button_low {
+    background-image: linear-gradient(to right, rgb(255, 26, 26), rgb(255, 187, 0))
+}
+
+.return_button_medium {
+    background-image: linear-gradient(to right, rgb(251, 235, 0), rgb(226, 0, 246))
+}
+
+.return_button_high {
+    background-image: linear-gradient(to right, rgb(79, 255, 26) , rgb(0, 225, 255))
+}
+
+button {
+    border-radius: 15%;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+#delete_button {
+    background-image: linear-gradient(to bottom left, rgb(255, 26, 26), rgb(174, 0, 255))
+}
+
+#no_button {
+    background-image: linear-gradient(to bottom left, rgb(9, 247, 255), rgb(174, 0, 255));
+    margin-right: 30px;
+    width: 80px;
+}
+
+#yes_button {
+    background-image: linear-gradient(to bottom right, rgb(255, 9, 9), rgb(174, 0, 255));
+    width: 80px;
+}
+
+.expanded_game_box_low, .expanded_game_box_medium, .expanded_game_box_high {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 250px;
+    padding: 1rem;
+    color: white;
+    border-width: 5px;
+    border-style: solid;
+ }
+
+.expanded_game_box_low {
+    border-image: linear-gradient(to bottom,  rgb(255, 26, 26),  rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.expanded_game_box_medium {
+    border-image: linear-gradient(to bottom,  rgb(251, 235, 0),  rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.expanded_game_box_high {
+    border-image: linear-gradient(to bottom,  rgb(79, 255, 26),  rgba(0, 0, 0, 0)) 1 100%;
+}
+
+
+.delete_confirmation {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 1rem;
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom,  rgb(255, 7, 7),  rgba(0, 0, 0, 0)) 1 100%;
+
+}
+
+#game_title {
+    font-size: 38px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+#game_hours, #game_title {
+    margin-bottom: 25px;
+}
+
+#notes_box {
+    max-width: 240px;
+    height: auto;
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+
+
+    .expanded_game_box_low, .expanded_game_box_medium, .expanded_game_box_high {
+        margin-left: auto;
+        border-width: 7px;
+        margin-right: auto;
+        max-width: 500px;
+    }
+
+    #notes_box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

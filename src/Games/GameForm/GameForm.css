@@ -1,0 +1,96 @@
+#cancel_button {
+  background-image: linear-gradient(
+    to bottom left,
+    rgb(9, 247, 255),
+    rgb(174, 0, 255)
+  );
+  margin-right: 30px;
+  width: 80px;
+}
+
+#notes_label {
+    max-height: 40px;
+}
+
+#submit_button {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 9, 9),
+    rgb(174, 0, 255)
+  );
+  width: 80px;
+}
+
+.add_game_text_area {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 4%;
+}
+
+.text_box,
+#add_game_priority {
+  color: black;
+  margin-left: 10px;
+}
+
+#add_game_est_time {
+  width: 90px;
+}
+
+#add_game_notes {
+  width: 300px;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+
+label {
+  width: 100%;
+  font-size: 28px;
+  border-bottom: 3px solid transparent;
+  border-radius: 5px;
+  border-image-source: linear-gradient(to right, red 0%, rgb(0, 68, 255) 100%);
+  border-image-slice: 5;
+}
+
+@media only screen and (min-width: 600px) {
+  
+    .add_game_form {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    label {
+      font-size: 28px;
+      border-bottom: 6px solid transparent;
+    }
+    .add_game_text_area {
+      flex-direction: column;
+      margin-top: 35px;
+    }
+
+    .text_box {
+      margin-left: 10%;
+      margin-top: 25px;
+      max-width: 300px;
+    }
+
+    #add_game_title {
+      height: 50px;
+      word-wrap: break-word;
+    }
+
+    #add_game_priority {
+      margin-left: 10%;
+      margin-top: 30px;
+      max-width: 100px;
+    }
+
+    #add_game_notes {
+      width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+}

@@ -1,28 +1,30 @@
 
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-// import { FileContextProvider } from '../context/FileContext'
+import { Route, Switch } from 'react-router-dom'
+import fileContext  from '../context/FileContext'
 import Header from '../Header/Header'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import HomePage from '../Home/Home'
-import GamesList from '../GamesList/GamesList'
-import ExpandedGame from '../ExpandedGame/ExpandedGame'
-import GameForm from '../GameForm/GameForm'
+import GamesList from '../Games/GamesList/GamesList'
+import ReviewList from '../Reviews/ReviewsList/ReviewsList'
+import ExpandedGame from '../Games/ExpandedGame/ExpandedGame'
+import ExpandedReview from '../Reviews/ExpandedReview/ExpandedReview'
+import GameForm from '../Games/GameForm/GameForm'
+import ReviewForm from '../Reviews/ReviewForm/ReviewForm'
 import Login from '../Login/Login'
 import Signup from '../Signup/Signup'
-// import config from '../config'
-
 import TokenService from '../services/TokenService'
-
 import './App.css';
+
+
 
 class App extends Component {
 
   state = {
     isLoggedIn: TokenService.hasAuthToken(),
   }
-
+  
   handleLogin = () => {
     this.setState({
       isLoggedIn: true
@@ -36,13 +38,21 @@ class App extends Component {
   }
 
   render() {
+
+    const value = {
+      isLoggedIn: this.state.isLoggedIn,
+      handleLogout: this.handleLogout,
+      handleLogin: this.handleLogin
+    };
+
     return (
       <div className="App">
+        <fileContext.Provider value={value}>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Titillium+Web:wght@400;600;700&display=swap');
+        </style>  
         <header className='App_header'>
-          <Header 
-            isLoggedIn={this.state.isLoggedIn}
-            handleLogout={this.handleLogout}
-          />
+          <Header/>
         </header>
           <Switch>
             <Route 
@@ -75,7 +85,24 @@ class App extends Component {
               path={'/quest-form'}
               component={GameForm}
             />
+            <PrivateRoute
+              exact
+              path={'/reviews'}
+              component={ReviewList}
+            />
+            <PrivateRoute
+              exact
+              path={'/reviews/:id'}
+              component={ExpandedReview}
+            />
+            <PrivateRoute
+              exact
+              path={'/review-form'}
+              component={ReviewForm}
+            />
           </Switch>
+        </fileContext.Provider>
+
       </div>
     );
   }
