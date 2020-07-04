@@ -15,6 +15,11 @@ Tired of reading meaningless reviews that don't actually tell you anything about
 
 If you answered yes (or no..) to any of these questions, then you should try QuestLog!
 
+With QuestLog, you'll be able to track all of your current games you are playing.  You can log all sorts of additional information about your game too, such as estimated time remaining to finish the game, and adding the location of the game.  But that's not all!
+
+QuestLog tracks reviews differently than most review sites.  Instead of using an arbitrary point system, we score games based on their worth/quality in dollars.  Now you can feel like your solid 5-10 hour games can compete on a fair and balanced scale with AAA title video games.  
+
+
 
 
 ## User Stories 
@@ -37,8 +42,21 @@ If you answered yes (or no..) to any of these questions, then you should try Que
 * I can view the review for video games that I have played.
 * I can edit or delete my reviews.
 * I can search for reviews that other users have made.
-### API Documentation 
 
-What is this??
 
-Do I also need README for server?  What should server README say?
+### Technologies Used
+
+
+In this app, we implemented a React client using JavaScript/JSX.  RESTful patterns were used throughout client-server interactions.  The server was built using Express and Node, and we built a relational database using PostgreSQL.  All styling was performed using plain CSS.  
+
+* React
+* JavaScript
+* Express
+* Node
+* SQL/PostgreSQL
+* JSX
+* REST
+* HTML
+* CSS
+
+

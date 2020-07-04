@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Signup.css'
 import AuthApiService from '../services/auth-api-service'
 
@@ -71,6 +71,7 @@ export default class Signup extends Component {
                 </label>
             <input required type='password' name='retype_password' id='signup_retype_password' className='text_area'/>
             </div>
+            <Link to='/signup'><p id='signup_redirect'>Already a user? Log in here</p></Link>
             <button type='submit' className='signup_button'>Sign Up</button> 
             </form>
         )

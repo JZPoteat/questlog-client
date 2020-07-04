@@ -116,19 +116,19 @@ export default class ReviewForm extends Component {
                     <label htmlFor='add_review_title'>
                         Title
                     </label>
-                    <input required type='text' value={this.state.title} name='title' className='text_box' id='add_review_title' onChange={this.setTitle} />
+                    <input required type='text' value={this.state.title} name='title' className='review_text_box' id='add_review_title' onChange={this.setTitle} />
                 </div>
                 <div className='add_review_text_area'>
                     <label htmlFor='add_review_rating'>
-                        Rating:
+                        Rating ($)
                     </label>
-                <input required type='text' name='rating' value={this.state.rating} id='add_review_rating' className='text_box' onChange={this.setRating}/>
+                <input required type='text' name='rating' value={this.state.rating} id='add_review_rating' className='review_text_box' onChange={this.setRating}/>
                 </div>
                 <div className='add_review_text_area'>
                     <label htmlFor='add_review_time_played'>
-                        Time Played 
+                        Time Played (hrs)
                     </label>
-                <input required type='text' name='time_played' value={this.state.time_played} id='add_review_time_played' className='text_box' onChange={this.setTimePlayed}/>
+                <input required type='text' name='time_played' value={this.state.time_played} id='add_review_time_played' className='review_text_box' onChange={this.setTimePlayed}/>
                 </div>
                 <div className='add_review_text_area'>
                     <label htmlFor='add_review_review' id='notes_label'>

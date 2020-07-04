@@ -17,7 +17,7 @@
 .quest_log_header {
     animation: fadeIn ease 1s;
     display: inline-block;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif !important;
     font-size: 48px;
     margin-top: 5px;
     margin-bottom: 0px;
@@ -48,6 +48,7 @@
 
 .login_signup_button {
     margin-right: 20px;
+    font-weight: bold;
 }
 
 

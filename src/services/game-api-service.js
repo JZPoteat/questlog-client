@@ -26,7 +26,8 @@ const GameApiService = {
           : res.json()
       )
   },
-  postGame(title, priority = 1, est_time, loc, notes) {
+  postGame(title, priority, est_time, loc, notes) {
+    console.log("here is the priority", priority)
     return fetch(`${config.API_ENDPOINT}/games`, {
         method: 'POST',
         headers: {
@@ -48,6 +49,8 @@ const GameApiService = {
         )
   },
   updateGame(gameId, title, priority, est_time, loc, notes) {
+
+
     return fetch(`${config.API_ENDPOINT}/games/${gameId}`, {
         method: 'PATCH',
         headers: {

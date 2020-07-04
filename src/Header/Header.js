@@ -4,6 +4,9 @@ import TokenService from '../services/TokenService'
 import './Header.css'
 import joystick from '../joystick-removebg-preview.png'
 import fileContext from '../context/FileContext'
+import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default class Header extends Component {
 
@@ -20,7 +23,7 @@ export default class Header extends Component {
             <Link
               onClick={this.handleLogoutClick}
               to='/' className='login_signup_button'>
-              Logout
+                <FontAwesomeIcon icon={faDoorOpen} />{' '}Logout
             </Link>
           </div>
         )

@@ -13,7 +13,6 @@ export default class ExpandedReview extends Component {
     }
 
     setReview = review => {
-        console.log('setting state');
         this.setState({
             review,
             error: null
@@ -83,7 +82,6 @@ export default class ExpandedReview extends Component {
 
     componentDidMount() {
         const reviewId = this.props.match.params.id
-        console.log(reviewId)
         ReviewApiService.getReview(reviewId)
         .then(this.changeImportanceFromNumToString)
         .then(this.setReview)

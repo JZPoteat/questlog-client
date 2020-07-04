@@ -5,6 +5,10 @@
     margin-left: 5px;
 }
 
+#signup_redirect:hover {
+    opacity: 0.5;
+}
+
 #login_password {
     margin-left: 15px;
 }

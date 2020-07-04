@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import TokenService from '.././services/TokenService'
 import AuthApiService from '../services/auth-api-service'
 import './Login.css'
-// import UIfx from 'uifx'
-// import loginTrack from '../loginTrack.mp3'
+import { Link } from 'react-router-dom'
 import fileContext from '../context/FileContext'
 
 export default class Login extends Component {
@@ -62,7 +61,9 @@ export default class Login extends Component {
                 </label>
             <input required type='password' name='password' id='login_password' className='text_area' />
             </div>
+            <Link to='/signup'><p id='signup_redirect'>Register as a new user</p></Link>
             <button type='submit' className='submit_button'>Login</button> 
+
             </form>
         )
     }

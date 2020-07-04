@@ -2,10 +2,11 @@
     display: inline-block;
     border: 7px solid transparent;
     padding: .5rem;
+    word-wrap: break-word;
     border-radius: 25%;
     border-image-slice: 5;
     margin-bottom: 25px;
-    max-width: 250px;
+    width: 250px;
     height: auto;
     border-image-source: linear-gradient(to left, rgb(217, 0, 255) 0%, rgb(203, 184, 255) 100%); 
 }
