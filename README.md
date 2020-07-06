@@ -2,6 +2,8 @@
 
 link to live-app:  https://questlog.vercel.app/
 
+![Home page]('./QuestLog/Home.jpg')
+
 ## Hello Adventurer!
 
 Ever feel overwhelemed by your continuously growing backlog of games?
