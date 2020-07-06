@@ -12,14 +12,12 @@ export default class GamesList extends Component {
     games: [],
     search: "",
     sort: "",
-    user: "",
-    error: null,
+    error: null
   };
 
   setGames = (games) => {
     this.setState({
       games,
-      user: games[0].user_id,
       error: null,
     });
   };
