@@ -17,7 +17,6 @@ export default class GamesList extends Component {
   };
 
   setGames = (games) => {
-    console.log(games, "games set");
     this.setState({
       games,
       user: games[0].user_id,

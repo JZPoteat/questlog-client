@@ -47,7 +47,7 @@ export default class GameForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { title, priority, est_time, loc, notes } = this.state;
-    console.log(priority)
+
     if (!priority) {
       this.setState({
         priority: "1",
@@ -103,8 +103,6 @@ export default class GameForm extends Component {
 
   checkProps = () => {
     if (this.props.game) {
-      console.log("this is the game you are editing", this.props.game);
-      console.log("checking props", this.props.game.importance);
       this.setState({
         title: this.props.game.title,
         priority: this.props.game.importance,

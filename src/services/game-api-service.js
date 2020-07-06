@@ -27,7 +27,6 @@ const GameApiService = {
       )
   },
   postGame(title, priority, est_time, loc, notes) {
-    console.log("here is the priority", priority)
     return fetch(`${config.API_ENDPOINT}/games`, {
         method: 'POST',
         headers: {
