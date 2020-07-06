@@ -4,6 +4,12 @@ link to live-app:  https://questlog.vercel.app/
 
 
 ![Home page](Home.jpg)
+![Games Dash](Games_Dash.jpg)
+![Expanded game](Expanded_Game.jpg)
+![Game form ](Game_form.jpg)
+![Reviews Dash](Reviews_Dash.jpg)
+![Expanded Review](Expanded_Review.jpg)
+
 
 ## Hello Adventurer!
 
