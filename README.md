@@ -2,7 +2,7 @@
 
 link to live-app:  https://questlog.vercel.app/
 
-![Home page]('https://github.com/JZPoteat/questlog-client/blob/master/src/QuestLog/Expanded%20Game.jpg')
+![Home page]('https://github.com/JZPoteat/questlog-client/blob/master/src/QuestLog/Expanded%20Game.jpg?raw=true')
 
 ## Hello Adventurer!
 
