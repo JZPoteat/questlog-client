@@ -2,7 +2,7 @@
 
 link to live-app:  https://questlog.vercel.app/
 
-![Home page]('./QuestLog/Home.jpg')
+![Home page](Home.jpg)
 
 ## Hello Adventurer!
 
