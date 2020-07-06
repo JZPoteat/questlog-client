@@ -31,6 +31,9 @@ export default class Home extends Component {
                     <p>Store your games in one place</p>
                     <p>Write and read reviews that <strong>actually make sense!</strong></p>
                     <Link to='/signup'><p id='here_button'>Start your journey here!</p></Link>
+                    <p>To check out a demo account, use the following credentials.</p>
+                    <p>Username: jacob</p>
+                    <p>Password: Password1!</p>
                 </section>
             </section>
         )
