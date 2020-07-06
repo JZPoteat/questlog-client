@@ -1,6 +1,6 @@
 # QuestLog
 
-link to live-app:  
+link to live-app:  https://questlog.vercel.app/
 
 ## Hello Adventurer!
 
