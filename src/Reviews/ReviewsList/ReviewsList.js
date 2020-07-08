@@ -6,7 +6,6 @@ import NavLink from "../../NavLink/NavLink";
 import "./ReviewsList.css";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AuthApiService from "../../services/auth-api-service";
 export default class ReviewsList extends Component {
   state = {
     reviews: [],

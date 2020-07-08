@@ -4,7 +4,6 @@ import Game from "../GameListItem/GameListItem";
 import GameApiService from "../../services/game-api-service";
 import NavLink from "../../NavLink/NavLink";
 import "./GameList.css";
-import AuthApiService from "../../services/auth-api-service";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class GamesList extends Component {
