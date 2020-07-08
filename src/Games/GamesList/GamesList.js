@@ -12,19 +12,13 @@ export default class GamesList extends Component {
     games: [],
     search: "",
     sort: "",
-    error: null
+    error: null,
   };
 
   setGames = (games) => {
     this.setState({
       games,
       error: null,
-    });
-  };
-
-  setUser = (user) => {
-    this.setState({
-      user: user,
     });
   };
 
@@ -97,8 +91,6 @@ export default class GamesList extends Component {
   componentDidMount() {
     GameApiService.getGames()
       .then(this.setGames)
-      .then(AuthApiService.getUserName(this.state.user))
-      .then(this.setUser)
       .catch((error) => this.setState({ error: error }));
   }
 
@@ -142,11 +134,14 @@ export default class GamesList extends Component {
         <Link to="/quest-form">
           <button className="add_quest_button"> + Add Game</button>
         </Link>
-          <div className="tooltip">
-            <FontAwesomeIcon icon={faInfoCircle} id='help_icon'/>
-            <span className="tooltiptext">Games are color coded to match your selected priority: Green="High" Yellow = "Medium" Red = "Low"</span>
-          </div>
-        
+        <div className="tooltip">
+          <FontAwesomeIcon icon={faInfoCircle} id="help_icon" />
+          <span className="tooltiptext">
+            Games are color coded to match your selected priority: Green="High"
+            Yellow = "Medium" Red = "Low"
+          </span>
+        </div>
+
         <ul className="quest_list">
           {games.map((game, index) => (
             <Game key={game.id} gameCount={index} {...game} />

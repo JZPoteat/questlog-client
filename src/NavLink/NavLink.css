@@ -1,22 +1,25 @@
 .nav_box {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.nav_link, .nav_link_selected {
-    font-size: 28px;
-    font-weight: bold;
-
+.nav_link,
+.nav_link_selected {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .nav_link:hover {
-    color: rgb(209, 0, 209)
+  color: rgb(209, 0, 209);
 }
 
 .nav_link_selected {
-    border-bottom: 7px solid transparent;
-    border-radius: 25px;
-    border-image-source: linear-gradient(to left, rgb(238, 50, 255) 0%, rgb(255, 245, 250) 100%);
-    border-image-slice: 5;
+  border-bottom: 7px solid transparent;
+  border-radius: 25px;
+  border-image-source: linear-gradient(
+    to left,
+    rgb(238, 50, 255) 0%,
+    rgb(255, 245, 250) 100%
+  );
+  border-image-slice: 5;
 }
-

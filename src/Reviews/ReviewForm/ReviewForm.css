@@ -1,23 +1,24 @@
 .review_text_box {
-    max-width: 165px;
-    color: black;
+  max-width: 165px;
+  color: black;
 }
 
 #add_review_review {
-    width: 300px;
-    height: 300px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin-top: 10px;
-  }
+  width: 300px;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
 
-  #add_review_time_played, #add_review_rating {
-      max-height: 50px;
-  }
+#add_review_time_played,
+#add_review_rating {
+  max-height: 50px;
+}
 
-  .add_review_text_area {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 4%;
-  }
+.add_review_text_area {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 4%;
+}

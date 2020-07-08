@@ -1,26 +1,30 @@
 .review_list_item {
-    display: inline-block;
-    border: 7px solid transparent;
-    padding: .5rem;
-    word-wrap: break-word;
-    border-radius: 25%;
-    border-image-slice: 5;
-    margin-bottom: 25px;
-    width: 250px;
-    height: auto;
-    border-image-source: linear-gradient(to left, rgb(217, 0, 255) 0%, rgb(203, 184, 255) 100%); 
+  display: inline-block;
+  border: 7px solid transparent;
+  padding: 0.5rem;
+  word-wrap: break-word;
+  border-radius: 25%;
+  border-image-slice: 5;
+  margin-bottom: 25px;
+  width: 250px;
+  height: auto;
+  border-image-source: linear-gradient(
+    to left,
+    rgb(217, 0, 255) 0%,
+    rgb(203, 184, 255) 100%
+  );
 }
 
 .review_list_item:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .review_title {
-    font-weight: bold;
-    font-size: 28px;
+  font-weight: bold;
+  font-size: 28px;
 }
 @media only screen and (min-width: 700px) {
-    .review_list_item {
-        margin: 30px;
-    }
+  .review_list_item {
+    margin: 30px;
+  }
 }

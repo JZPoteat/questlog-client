@@ -1,25 +1,28 @@
 .review_list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .add_review_button {
-    background-image: linear-gradient(to top left, rgb(0, 90, 47), rgb(49, 209, 0));
-    padding: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-    font-weight: bold;
-    margin-bottom: 25px;
+  background-image: linear-gradient(
+    to top left,
+    rgb(0, 90, 47),
+    rgb(49, 209, 0)
+  );
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
 
 @media only screen and (min-width: 700px) {
-    .review_list {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-        height: auto;
-    }
+  .review_list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: auto;
+  }
 }
-

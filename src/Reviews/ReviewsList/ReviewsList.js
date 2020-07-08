@@ -12,21 +12,13 @@ export default class ReviewsList extends Component {
     reviews: [],
     search: "",
     sort: "",
-    user: "",
     error: null,
   };
 
   setReviews = (reviews) => {
     this.setState({
       reviews,
-      user: reviews[0].user_id,
       error: null,
-    });
-  };
-
-  setUser = (user) => {
-    this.setState({
-      user: user,
     });
   };
 
@@ -104,8 +96,6 @@ export default class ReviewsList extends Component {
   componentDidMount() {
     ReviewsApiService.getReviews()
       .then(this.setReviews)
-      .then(AuthApiService.getUserName(this.state.user))
-      .then(this.setUser)
       .catch((error) => this.setState({ error: error }));
   }
 
@@ -131,9 +121,13 @@ export default class ReviewsList extends Component {
           <button className="add_review_button">Add review</button>
         </Link>
         <div className="tooltip">
-            <FontAwesomeIcon icon={faInfoCircle} id='help_icon'/>
-            <span className="tooltiptext">Let us know how much you think your games are worth in dollars.  Ditch the old arbitrary rating system, and let your ratings carry concrete meaning!</span>
-          </div>
+          <FontAwesomeIcon icon={faInfoCircle} id="help_icon" />
+          <span className="tooltiptext">
+            Let us know how much you think your games are worth in dollars.
+            Ditch the old arbitrary rating system, and let your ratings carry
+            concrete meaning!
+          </span>
+        </div>
         <ul className="review_list">
           {reviews.map((review) => (
             <Review key={review.id} {...review} />

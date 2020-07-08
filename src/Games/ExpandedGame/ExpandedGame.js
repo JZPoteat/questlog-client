@@ -12,7 +12,6 @@ export default class ExpandedGame extends Component {
     redirect: false,
   };
 
-
   setGame = (game) => {
     this.setState({
       game,
@@ -124,8 +123,7 @@ export default class ExpandedGame extends Component {
 
   componentDidMount() {
     const gameId = this.props.match.params.id;
-    GameApiService.getGame(gameId)
-      .then(this.setGame);
+    GameApiService.getGame(gameId).then(this.setGame);
   }
 
   render() {

@@ -1,31 +1,32 @@
 .text_area {
-    color: rgb(29, 47, 77);
-    font-weight: bold;
-    width: 200px;
-    margin-left: 5px;
+  color: rgb(29, 47, 77);
+  font-weight: bold;
+  width: 200px;
+  margin-left: 5px;
 }
 
 #signup_redirect:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 #login_password {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .submit_button {
-    background-image: linear-gradient(to bottom right, red, yellow);
-    border-radius: 15%;
-    height: 50px;
-    width: 100px;
-    font-size: 24px;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  border-radius: 15%;
+  height: 50px;
+  width: 100px;
+  font-size: 24px;
 }
 
 .submit_button:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
-.password, .user_name {
-    display: flex;
-    align-items: center;
+.password,
+.user_name {
+  display: flex;
+  align-items: center;
 }

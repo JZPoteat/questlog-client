@@ -2,7 +2,7 @@
   box-sizing: border-box;
   color: white;
   font-size: 20px;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 ul {
@@ -14,17 +14,15 @@ a {
 li {
   list-style-type: none;
   margin: none;
-
 }
 
 body {
   text-align: center;
-  background: url('../background.jpg') no-repeat center center fixed; 
+  background: url("../background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
 }
 
 .red {

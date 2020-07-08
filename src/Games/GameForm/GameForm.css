@@ -9,7 +9,7 @@
 }
 
 #notes_label {
-    max-height: 40px;
+  max-height: 40px;
 }
 
 #submit_button {
@@ -56,10 +56,8 @@ label {
 }
 
 @media only screen and (min-width: 768px) {
-  
-    .add_game_form {
-      margin-left: 25%;
-      margin-right: 25%;
-    }
-
+  .add_game_form {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }

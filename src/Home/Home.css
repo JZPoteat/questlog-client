@@ -1,38 +1,46 @@
 #section_1 {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #game_review_options {
-    display: flex;
-    margin-left: 25px;
-    margin-right: 25px;
-    justify-content: space-between;
+  display: flex;
+  margin-left: 25px;
+  margin-right: 25px;
+  justify-content: space-between;
 }
 
 #here_button {
-    width: 60%;
+  width: 60%;
 }
 
-#here_button, #games_tab, #reviews_tab {
-    padding: 15px;
-    font-weight: bold;  
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 28px;
-    border: 4px solid transparent;
-    border-radius: 5px;
-    border-image-source: linear-gradient(to right, rgb(255, 0, 85) 0%, rgb(0, 68, 255) 100%);
-    border-image-slice: 5; 
+#here_button,
+#games_tab,
+#reviews_tab {
+  padding: 15px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 28px;
+  border: 4px solid transparent;
+  border-radius: 5px;
+  border-image-source: linear-gradient(
+    to right,
+    rgb(255, 0, 85) 0%,
+    rgb(0, 68, 255) 100%
+  );
+  border-image-slice: 5;
 }
 
-#here_button:hover, #games_tab:hover, #reviews_tab:hover {
-    opacity: 0.5;
+#here_button:hover,
+#games_tab:hover,
+#reviews_tab:hover {
+  opacity: 0.5;
 }
 
 @media only screen and (min-width: 600px) {
-    #game_review_options {
-        margin-left: 25%;
-        margin-right: 25%;
-    }
+  #game_review_options {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
