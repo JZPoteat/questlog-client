@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Home from "../Home/Home";
+import ReviewForm from "../Reviews/ReviewForm/ReviewForm";
 import { BrowserRouter } from "react-router-dom";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-      <Home />
+      <ReviewForm />
     </BrowserRouter>,
     div
   );

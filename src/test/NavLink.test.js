@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Home from "../Home/Home";
+import NavLink from "../NavLink/NavLink";
 import { BrowserRouter } from "react-router-dom";
-
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-      <Home />
+      <NavLink />
     </BrowserRouter>,
     div
   );

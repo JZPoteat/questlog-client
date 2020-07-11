@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Home from "../Home/Home";
+import Signup from "../Signup/Signup";
 import { BrowserRouter } from "react-router-dom";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <BrowserRouter>
-      <Home />
+      <Signup />
     </BrowserRouter>,
     div
   );

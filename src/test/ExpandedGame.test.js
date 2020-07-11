@@ -1,14 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Home from "../Home/Home";
+import ExpandedGame from "../Games/ExpandedGame/ExpandedGame";
 import { BrowserRouter } from "react-router-dom";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
+  const testProps = {
+    params: {
+      id: 1,
+    },
+  };
   ReactDOM.render(
     <BrowserRouter>
-      <Home />
+      <ExpandedGame match={testProps} />
     </BrowserRouter>,
     div
   );
