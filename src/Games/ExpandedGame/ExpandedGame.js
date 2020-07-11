@@ -28,6 +28,7 @@ export default class ExpandedGame extends Component {
   renderExpandedGame = () => {
     let { game } = this.state;
     return (
+      //Games are color coded, and the className is changed to reflect the game's importance.
       <section
         className={
           this.state.game.importance === 1
@@ -89,6 +90,7 @@ export default class ExpandedGame extends Component {
 
   handleToggleDelete = () => {
     const newDeleteState = !this.state.deleting;
+    //Setting state here renders a confirmation form to confirm that the user wants to delete the game
     this.setState({
       deleting: newDeleteState,
     });

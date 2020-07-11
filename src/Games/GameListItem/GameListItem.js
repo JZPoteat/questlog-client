@@ -4,6 +4,7 @@ import "./GameListItem.css";
 export default class GameListItem extends Component {
   render() {
     return (
+      //Games are color coded depending on the importance of the game
       <Link to={`/games/${this.props.id}`} className="game_list_link">
         <li
           className={

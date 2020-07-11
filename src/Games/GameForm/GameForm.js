@@ -113,6 +113,7 @@ export default class GameForm extends Component {
     }
   };
   componentDidMount() {
+    //Check if props were passed.  If so, populate fields with the given information
     this.checkProps();
   }
 
