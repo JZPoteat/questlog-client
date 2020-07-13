@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./ReviewsListItem.css";
 export default class ReviewsListItem extends Component {
   formatDate = (date) => {
+    //formats the date to a more readable string for the user
     let splitDate = date.split("-");
     let formatDate = `${splitDate[1]} - ${splitDate[2]} - ${splitDate[0]}`;
     return formatDate;

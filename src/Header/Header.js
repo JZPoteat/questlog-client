@@ -41,6 +41,7 @@ export default class Header extends Component {
     );
   };
   render() {
+    //If logged in, render logoutlink, else render login, signup links
     return (
       <section className="Header">
         <section className="login_signup_buttons">

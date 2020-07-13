@@ -4,6 +4,7 @@ import TokenService from "../services/TokenService";
 import "./Home.css";
 export default class Home extends Component {
   renderLoggedIn = () => {
+    //component renders when user is logged in
     return (
       <section className="welcome_back_section">
         <h2 id="welcome_statement">Welcome back adventurer!</h2>
@@ -25,6 +26,7 @@ export default class Home extends Component {
   };
 
   renderNotLoggedIn = () => {
+    //component that renders when the user is not logged in
     return (
       <section className="welcome_section">
         <h1 id="welcome_statement">

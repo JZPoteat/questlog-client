@@ -19,6 +19,7 @@ import "./App.css";
 
 class App extends Component {
   state = {
+    //login state live in app
     isLoggedIn: TokenService.hasAuthToken(),
   };
 
