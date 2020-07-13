@@ -15,30 +15,35 @@ export default class GameForm extends Component {
   };
 
   setTitle = (e) => {
+    //sets state of current value of title field.
     this.setState({
       title: e.target.value,
     });
   };
 
   setPriority = (e) => {
+    //sets state of current value of priority field
     this.setState({
       priority: e.target.value,
     });
   };
 
   setEstTime = (e) => {
+    //sets state of currnet value of priority field
     this.setState({
       est_time: e.target.value,
     });
   };
 
   setLocation = (e) => {
+    //sets state of current value of location field
     this.setState({
       loc: e.target.value,
     });
   };
 
   setNotes = (e) => {
+    //sets state of current value of notes field
     this.setState({
       notes: e.target.value,
     });
@@ -49,14 +54,17 @@ export default class GameForm extends Component {
     const { title, priority, est_time, loc, notes } = this.state;
 
     if (!priority) {
+      //confirms that if a priority is not selected, that it will default to 1
       this.setState({
         priority: "1",
       });
     } else if (!this.validateEstTime(est_time)) {
+      //validates the time is given as a number, and sets error accordingly
       this.setState({
         error: 'Please enter a valid "estimated time" in hours',
       });
     } else if (this.props.editing) {
+      //we are given this prop as the user clicks the edit button in the ExpandedGame component
       GameApiService.updateGame(
         this.props.game.id,
         title,
@@ -77,6 +85,7 @@ export default class GameForm extends Component {
         })
         .catch((error) => this.setState({ error: error }));
     } else {
+      //if the user is not editing, then they must be adding a game.
       GameApiService.postGame(title, priority, est_time, loc, notes)
         .then(() => {
           this.setState({
@@ -102,6 +111,7 @@ export default class GameForm extends Component {
   }
 
   checkProps = () => {
+    //checks if this component is being rendered because the edit button was clicked in the ExpandedGame component.  If, so then the form fields need to be populated with info from the corresponding game
     if (this.props.game) {
       this.setState({
         title: this.props.game.title,

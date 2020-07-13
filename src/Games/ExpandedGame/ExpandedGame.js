@@ -13,6 +13,7 @@ export default class ExpandedGame extends Component {
   };
 
   setGame = (game) => {
+    //when component mounts, it sets the state of the current game
     this.setState({
       game,
       error: null,
@@ -20,6 +21,7 @@ export default class ExpandedGame extends Component {
   };
 
   handleEditClick = () => {
+    //sets the state of editing to true, which will then trigger renderEditForm upon re render
     this.setState({
       editing: true,
     });
@@ -97,10 +99,12 @@ export default class ExpandedGame extends Component {
   };
 
   renderEditForm = () => {
+    //renders the game form but with props in order to populate the fields with game information
     return <GameForm game={this.state.game} editing={true} />;
   };
 
   deleteGame = () => {
+    //deletes game from DB
     GameApiService.deleteGame(this.state.game.id).then(() => {
       this.setState({
         redirect: true,
@@ -109,9 +113,10 @@ export default class ExpandedGame extends Component {
   };
 
   renderDeleteForm = () => {
+    //renders a confirmation component that verifies that the user wants to delete the game
     return (
       <section className="delete_confirmation">
-        <p>Are you sure you want to delete this quest?</p>
+        <p>Are you sure you want to delete this game?</p>
         <p>"{this.state.game.title}"</p>
         <button onClick={this.handleToggleDelete} id="no_button">
           No
@@ -135,6 +140,7 @@ export default class ExpandedGame extends Component {
     return (
       <>
         <div className="expanded_game">
+          {/**if editing, renderEditForm, else if confirming delete, renderDeleteForm, else render the expanded game */}
           {this.state.editing
             ? this.renderEditForm()
             : this.state.deleting

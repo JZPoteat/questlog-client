@@ -13,6 +13,7 @@ export default class ExpandedReview extends Component {
   };
 
   setReview = (review) => {
+    //after making get request, sets state of the reviews obtained
     this.setState({
       review,
       error: null,
@@ -20,12 +21,14 @@ export default class ExpandedReview extends Component {
   };
 
   handleEditClick = () => {
+    //sets the state of editing to true which will render the review form with editing props
     this.setState({
       editing: true,
     });
   };
 
   renderExpandedReview = () => {
+    //component renders all information for the review
     let { review } = this.state;
     return (
       <section className="expanded_review_box">
@@ -56,6 +59,7 @@ export default class ExpandedReview extends Component {
   };
 
   handleToggleDelete = () => {
+    //sets the state of deleting, which will either render delete confirmation component or remove the delet confirmation component
     const newDeleteState = !this.state.deleting;
     this.setState({
       deleting: newDeleteState,
@@ -63,10 +67,12 @@ export default class ExpandedReview extends Component {
   };
 
   renderEditForm = () => {
+    //when user clicks edit button, renders the review form with corresponding props.
     return <ReviewForm review={this.state.review} editing={true} />;
   };
 
   deleteReview = () => {
+    //makes delete request to server
     ReviewApiService.deleteReview(this.state.review.id).then(() => {
       this.setState({
         redirect: true,
@@ -75,6 +81,7 @@ export default class ExpandedReview extends Component {
   };
 
   renderDeleteForm = () => {
+    //confirms that the user wants to delete the review
     return (
       <section className="delete_confirmation">
         <p>Are you sure you want to delete this review?</p>

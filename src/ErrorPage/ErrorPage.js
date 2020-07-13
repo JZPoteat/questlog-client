@@ -1,6 +1,7 @@
 import React from "react";
 
 class ErrorPage extends React.Component {
+  //general error page for when something goes wrong with the app
   state = { error: null };
 
   static getDerivedStateFromError(error) {

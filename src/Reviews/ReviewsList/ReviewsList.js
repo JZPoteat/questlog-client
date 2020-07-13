@@ -15,6 +15,7 @@ export default class ReviewsList extends Component {
   };
 
   setReviews = (reviews) => {
+    //After making fetch request, set the state of current reviews
     this.setState({
       reviews,
       error: null,
@@ -22,18 +23,21 @@ export default class ReviewsList extends Component {
   };
 
   setSort = (e) => {
+    //set state of selected sort value
     this.setState({
       sort: e.target.value,
     });
   };
 
   setSearch = (e) => {
+    //set state of search bar value
     this.setState({
       search: e.target.value,
     });
   };
 
   searchBar = () => {
+    //search bar component
     return (
       <div className="search_box">
         <p id="search_label">Search:</p>
@@ -48,6 +52,7 @@ export default class ReviewsList extends Component {
   };
 
   sortOptions = () => {
+    //sort box component
     return (
       <div className="sort_box">
         <p id="sort_label">Sort by:</p>
@@ -71,23 +76,30 @@ export default class ReviewsList extends Component {
   sortReviews = () => {
     let sort = Number(this.state.sort);
     if (sort === 0) {
+      //sort by rating ascending by default
       this.state.reviews.sort((a, b) => (a.rating > b.rating ? 1 : -1));
     }
     if (sort === 1) {
+      //sort by rating ascending
       this.state.reviews.sort((a, b) => (a.rating > b.rating ? 1 : -1));
     } else if (sort === 2) {
+      //sort by rating descending
       this.state.reviews.sort((a, b) => (a.rating > b.rating ? -1 : 1));
     } else if (sort === 3) {
+      //sort by time_played ascending
       this.state.reviews.sort((a, b) =>
         a.time_played > b.time_played ? 1 : -1
       );
     } else if (sort === 4) {
+      //sort by time_played descending
       this.state.reviews.sort((a, b) =>
         a.time_played > b.time_played ? -1 : 1
       );
     } else if (sort === 5) {
+      //sort by title ascending
       this.state.reviews.sort((a, b) => (a.title > b.title ? 1 : -1));
     } else if (sort === 6) {
+      //sort by title descending
       this.state.reviews.sort((a, b) => (a.title > b.title ? -1 : 1));
     }
   };

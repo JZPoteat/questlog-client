@@ -14,24 +14,28 @@ export default class ReviewForm extends Component {
   };
 
   setTitle = (e) => {
+    //sets state of title for title field
     this.setState({
       title: e.target.value,
     });
   };
 
   setRating = (e) => {
+    //sets state of rating for rating field
     this.setState({
       rating: e.target.value,
     });
   };
 
   setTimePlayed = (e) => {
+    //sets timeplayed for timeplayed field
     this.setState({
       time_played: e.target.value,
     });
   };
 
   setReview = (e) => {
+    //sets review for review field
     this.setState({
       review: e.target.value,
     });
@@ -41,14 +45,17 @@ export default class ReviewForm extends Component {
     e.preventDefault();
     const { title, rating, time_played, review } = this.state;
     if (!this.validateNumber(time_played)) {
+      //validates time_played field
       this.setState({
         error: 'Please enter a valid "time_played" in hours',
       });
     } else if (!this.validateNumber(rating)) {
+      //validates rating field
       this.setState({
         error: 'Please enter a valid "rating" in dollars',
       });
     } else if (this.props.editing) {
+      //if this component was rendered from the user clicking the edit button in the ExpandedReview component, then update the Review
       ReviewApiService.updateReview(
         this.props.review.id,
         title,
@@ -84,6 +91,7 @@ export default class ReviewForm extends Component {
   };
 
   validateNumber(maybeNum) {
+    //check if component is number
     if (isNaN(Number(maybeNum))) {
       return false;
     }
@@ -91,6 +99,7 @@ export default class ReviewForm extends Component {
   }
 
   checkProps = () => {
+    //if this component is being rendered as a result of the user clicking the edit button in the Expanded review component, then populate the form fields with the appropriate information
     if (this.props.review) {
       this.setState({
         title: this.props.review.title,

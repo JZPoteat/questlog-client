@@ -15,6 +15,7 @@ export default class GamesList extends Component {
   };
 
   setGames = (games) => {
+    //after making fetch request, set the state of the games to render
     this.setState({
       games,
       error: null,
@@ -22,17 +23,20 @@ export default class GamesList extends Component {
   };
 
   setSort = (e) => {
+    //sets the value selected for the sort field
     this.setState({
       sort: e.target.value,
     });
   };
   setSearch = (e) => {
+    //sets the value input from the search field
     this.setState({
       search: e.target.value,
     });
   };
 
   searchBar = () => {
+    //search bar component
     return (
       <div className="search_box">
         <p id="search_label">Search:</p>
@@ -47,6 +51,7 @@ export default class GamesList extends Component {
   };
 
   sortOptions = () => {
+    //sort field component
     return (
       <div className="sort_box">
         <p id="sort_label">Sort by:</p>
@@ -70,19 +75,26 @@ export default class GamesList extends Component {
   sortGames = () => {
     let sort = Number(this.state.sort);
     if (sort === 0) {
+      //sort by est time descending by default
       this.state.games.sort((a, b) => (a.est_time > b.est_time ? 1 : -1));
     }
     if (sort === 1) {
+      //sort by importance ascending
       this.state.games.sort((a, b) => (a.importance > b.importance ? 1 : -1));
     } else if (sort === 2) {
+      //sort by importance descending
       this.state.games.sort((a, b) => (a.importance > b.importance ? -1 : 1));
     } else if (sort === 3) {
+      //sort by est_time ascending
       this.state.games.sort((a, b) => (a.est_time > b.est_time ? 1 : -1));
     } else if (sort === 4) {
+      //sort by est_time descending
       this.state.games.sort((a, b) => (a.est_time > b.est_time ? -1 : 1));
     } else if (sort === 5) {
+      //sort by title ascending
       this.state.games.sort((a, b) => (a.title > b.title ? 1 : -1));
     } else if (sort === 6) {
+      //sort by title descending
       this.state.games.sort((a, b) => (a.title > b.title ? -1 : 1));
     }
   };
@@ -97,6 +109,7 @@ export default class GamesList extends Component {
     this.sortGames();
     let { games } = this.state;
     if (!games) {
+      //return gameListComponent but with no games
       return (
         <>
           <h1 className="welcome_statement">Welcome back!</h1>
@@ -114,6 +127,7 @@ export default class GamesList extends Component {
     }
     if (this.state.search !== "") {
       games = games.filter((g) =>
+        //search by title, case insensitive
         g.title.toLowerCase().includes(this.state.search.toLowerCase())
       );
     }

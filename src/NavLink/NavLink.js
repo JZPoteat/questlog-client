@@ -4,6 +4,7 @@ import "./NavLink.css";
 
 export default class NavLink extends Component {
   render() {
+    //Games and Reviews nav links
     return (
       <ul className="nav_box">
         <Link to="/games">

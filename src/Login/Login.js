@@ -29,10 +29,12 @@ export default class Login extends Component {
       .then((res) => {
         user_name.value = "";
         password.value = "";
+        //saves auth token to memory
         TokenService.saveAuthToken(res.authToken);
         this.handleLoginSuccess();
       })
       .catch((res) => {
+        //if error returned from server, sets the state to reflect the error
         this.setState({ error: res.error });
       });
   };
