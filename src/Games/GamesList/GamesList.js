@@ -6,7 +6,10 @@ import NavLink from "../../NavLink/NavLink";
 import "./GameList.css";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loading from '../../Loading/Loading';
+import fileContext from "../../context/FileContext";
 export default class GamesList extends Component {
+  static  contextType = fileContext;
   state = {
     games: [],
     search: "",
@@ -16,6 +19,7 @@ export default class GamesList extends Component {
 
   setGames = (games) => {
     //after making fetch request, set the state of the games to render
+    this.context.handleLoading();
     this.setState({
       games,
       error: null,
@@ -100,6 +104,7 @@ export default class GamesList extends Component {
   };
 
   componentDidMount() {
+    this.context.handleLoading();
     GameApiService.getGames()
       .then(this.setGames)
       .catch((error) => this.setState({ error: error }));
@@ -154,7 +159,7 @@ export default class GamesList extends Component {
             Yellow = "Medium" Red = "Low"
           </span>
         </div>
-
+        {this.context.isLoading && <Loading />}
         <ul className="quest_list">
           {games.map((game, index) => (
             <Game key={game.id} gameCount={index} {...game} />

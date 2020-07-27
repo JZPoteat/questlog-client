@@ -4,6 +4,7 @@ import AuthApiService from "../services/auth-api-service";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import fileContext from "../context/FileContext";
+import Loading from '../Loading/Loading';
 
 export default class Login extends Component {
   static contextType = fileContext;
@@ -19,6 +20,7 @@ export default class Login extends Component {
     history.push(destination);
   };
   handleSubmit = (ev) => {
+    this.context.handleLoading();
     ev.preventDefault();
     const { user_name, password } = ev.target;
     this.setState({ error: null });
@@ -31,11 +33,14 @@ export default class Login extends Component {
         password.value = "";
         //saves auth token to memory
         TokenService.saveAuthToken(res.authToken);
+        this.context.handleLoading();
         this.handleLoginSuccess();
       })
       .catch((res) => {
         //if error returned from server, sets the state to reflect the error
-        this.setState({ error: res.error });
+        this.setState({ 
+          error: res.error,
+         });
       });
   };
 
@@ -72,6 +77,7 @@ export default class Login extends Component {
         <button type="submit" className="submit_button">
           Login
         </button>
+        {this.context.isLoading && <Loading />}
       </form>
     );
   }

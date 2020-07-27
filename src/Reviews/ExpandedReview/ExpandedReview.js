@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import ReviewForm from "../ReviewForm/ReviewForm";
 import ReviewApiService from "../../services/reviews-api-service";
+import Loading from "../../Loading/Loading";
 import "./ExpandedReview.css";
+import fileContext from "../../context/FileContext";
 export default class ExpandedReview extends Component {
+  static contextType = fileContext;
   state = {
     review: [],
     editing: false,
@@ -14,6 +17,7 @@ export default class ExpandedReview extends Component {
 
   setReview = (review) => {
     //after making get request, sets state of the reviews obtained
+    this.context.handleLoading();
     this.setState({
       review,
       error: null,
@@ -97,6 +101,7 @@ export default class ExpandedReview extends Component {
   };
 
   componentDidMount() {
+    this.context.handleLoading();
     const reviewId = this.props.match.params.id;
     ReviewApiService.getReview(reviewId)
       .then(this.changeImportanceFromNumToString)
@@ -110,6 +115,7 @@ export default class ExpandedReview extends Component {
     return (
       <>
         <div className="expanded_review">
+          {this.context.isLoading && <Loading />}
           {this.state.editing
             ? this.renderEditForm()
             : this.state.deleting

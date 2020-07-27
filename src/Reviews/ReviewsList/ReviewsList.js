@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import Review from "../ReviewsListItem/ReviewsListItem";
 import ReviewsApiService from "../../services/reviews-api-service";
 import NavLink from "../../NavLink/NavLink";
+import Loading from "../../Loading/Loading";
 import "./ReviewsList.css";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import fileContext from "../../context/FileContext";
 export default class ReviewsList extends Component {
+  
+  static contextType = fileContext;
+
   state = {
     reviews: [],
     search: "",
@@ -16,6 +21,7 @@ export default class ReviewsList extends Component {
 
   setReviews = (reviews) => {
     //After making fetch request, set the state of current reviews
+    this.context.handleLoading();
     this.setState({
       reviews,
       error: null,
@@ -105,9 +111,13 @@ export default class ReviewsList extends Component {
   };
 
   componentDidMount() {
+    this.context.handleLoading();
     ReviewsApiService.getReviews()
       .then(this.setReviews)
       .catch((error) => this.setState({ error: error }));
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {
@@ -140,6 +150,7 @@ export default class ReviewsList extends Component {
           </span>
         </div>
         <ul className="review_list">
+        {this.context.isLoading && <Loading />}
           {reviews.map((review) => (
             <Review key={review.id} {...review} />
           ))}

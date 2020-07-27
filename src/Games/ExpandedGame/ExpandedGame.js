@@ -3,7 +3,12 @@ import { Link, Redirect } from "react-router-dom";
 import GameForm from "../GameForm/GameForm";
 import GameApiService from "../../services/game-api-service";
 import "./ExpandedGame.css";
+import Loading from "../../Loading/Loading";
+import fileContext from "../../context/FileContext";
 export default class ExpandedGame extends Component {
+
+  static contextType = fileContext;
+
   state = {
     game: [],
     editing: false,
@@ -14,6 +19,7 @@ export default class ExpandedGame extends Component {
 
   setGame = (game) => {
     //when component mounts, it sets the state of the current game
+    this.context.handleLoading();
     this.setState({
       game,
       error: null,
@@ -80,7 +86,7 @@ export default class ExpandedGame extends Component {
             Location: <strong>{game.loc}</strong>
           </li>
           <li id="notes_box">
-            Notes:<p>{game.notes}</p>
+            Notes:<p id="notes_box">{game.notes}</p>
           </li>
         </ul>
         <button onClick={this.handleToggleDelete} id="delete_button">
@@ -129,6 +135,7 @@ export default class ExpandedGame extends Component {
   };
 
   componentDidMount() {
+    this.context.handleLoading();
     const gameId = this.props.match.params.id;
     GameApiService.getGame(gameId).then(this.setGame);
   }
@@ -141,6 +148,7 @@ export default class ExpandedGame extends Component {
       <>
         <div className="expanded_game">
           {/**if editing, renderEditForm, else if confirming delete, renderDeleteForm, else render the expanded game */}
+          {this.context.isLoading && <Loading />}
           {this.state.editing
             ? this.renderEditForm()
             : this.state.deleting

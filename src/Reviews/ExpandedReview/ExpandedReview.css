@@ -41,7 +41,7 @@
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 250px;
+  max-width: 300px;
   padding: 1rem;
   color: white;
   border-width: 5px;
@@ -61,5 +61,17 @@
   #review_box {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  .expanded_review_box {
+    max-width: 700px;
+  }
+
+  #review_box {
+    max-width: 500px;
   }
 }

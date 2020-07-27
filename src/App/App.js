@@ -21,6 +21,7 @@ class App extends Component {
   state = {
     //login state live in app
     isLoggedIn: TokenService.hasAuthToken(),
+    isLoading: false,
   };
 
   handleLogin = () => {
@@ -35,9 +36,17 @@ class App extends Component {
     });
   };
 
+  handleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading
+    })
+  }
+
   render() {
     const value = {
       isLoggedIn: this.state.isLoggedIn,
+      isLoading: this.state.isLoading,
+      handleLoading: this.handleLoading,
       handleLogout: this.handleLogout,
       handleLogin: this.handleLogin,
     };
