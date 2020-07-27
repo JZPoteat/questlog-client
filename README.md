@@ -2,6 +2,8 @@
 
 link to live-app:  https://questlog.vercel.app/
 
+link to server-repo:  https://github.com/JZPoteat/questlog-server
+
 
 ![Home page](Home.jpg)
 ![Games Dash](Games_Dash.jpg)
