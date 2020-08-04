@@ -6,6 +6,7 @@ import joystick from "../joystick-removebg-preview.png";
 import fileContext from "../context/FileContext";
 import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import IdleService from "../services/idle-service";
 
 export default class Header extends Component {
   static contextType = fileContext;
@@ -13,6 +14,9 @@ export default class Header extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
     this.context.handleLogout();
+    /* when logging out, clear the callbacks to the refresh api and idle auto logout */
+    TokenService.clearCallbackBeforeExpiry();
+    IdleService.unRegisterIdleResets();
   };
   renderLogoutLink = () => {
     return (

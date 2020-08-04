@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import TokenService from ".././services/TokenService";
 import AuthApiService from "../services/auth-api-service";
 import "./Login.css";
 import { Link } from "react-router-dom";
@@ -32,7 +31,6 @@ export default class Login extends Component {
         user_name.value = "";
         password.value = "";
         //saves auth token to memory
-        TokenService.saveAuthToken(res.authToken);
         this.context.handleLoading();
         this.handleLoginSuccess();
       })
