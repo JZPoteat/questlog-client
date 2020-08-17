@@ -2,16 +2,29 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import GameApiService from "../../services/game-api-service";
 import "./GameForm.css";
+import GameSearch from "../../GameSearch/GameSearch";
+import SearchResults from "../SearchResults/SearchResults";
+import fileContext from "../../context/FileContext";
 export default class GameForm extends Component {
+  static contextType = fileContext;
   state = {
     title: "",
     priority: "",
     est_time: "",
     loc: "",
     notes: "",
+    search: "",
+    search_results: [],
+    isSearching: true,
     error: null,
     editing: false,
     redirect: false,
+  };
+
+  setSearch = (e) => {
+    this.setState({
+      search: e.target.value,
+    });
   };
 
   setTitle = (e) => {
@@ -122,15 +135,53 @@ export default class GameForm extends Component {
       });
     }
   };
+  toggleSearch = () => {
+    this.setState({
+      isSearching: !this.state.isSearching,
+    });
+  };
+
+  selectSearchItem = (title) => {
+    this.setState({
+      title: title,
+      isSearching: false,
+    })
+    
+  }
   componentDidMount() {
-    //Check if props were passed.  If so, populate fields with the given information
     this.checkProps();
   }
 
+  handleSubmitSearch = (e) => {
+    e.preventDefault();
+    this.context.handleLoading();
+    this.setState({
+      search_results: [],
+    });
+    GameApiService.searchForGames(this.state.search).then((res) => {
+      this.context.handleLoading();
+      this.setState({
+        search_results: res.results.sort((a, b) => (a.name < b.name ? -1 : 1)),
+      });
+    });
+  };
+
   render() {
     const { error } = this.state;
+    console.log(this.state.search_results);
     if (this.state.redirect) {
       return <Redirect to="/games" />;
+    } else if (this.state.isSearching) {
+      return (
+        <>
+          <GameSearch
+            search={this.state.search}
+            handleSubmitSearch={this.handleSubmitSearch}
+            handleSearch={this.setSearch}
+          />
+          {this.state.search_results === [] ? "" : <SearchResults selectSearchItem={this.selectSearchItem} results={this.state.search_results}/>}
+        </>
+      );
     }
     return (
       <form className="add_game_form" onSubmit={this.handleSubmit}>

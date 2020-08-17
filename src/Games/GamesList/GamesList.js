@@ -150,7 +150,7 @@ export default class GamesList extends Component {
           {this.sortOptions()}
         </section>
         <Link to="/quest-form">
-          <button className="add_quest_button"> + Add Game</button>
+          <button className="add_quest_button"> + Add Game </button>
         </Link>
         <div className="tooltip">
           <FontAwesomeIcon icon={faInfoCircle} id="help_icon" />

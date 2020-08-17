@@ -1,0 +1,22 @@
+#search_button {
+    background-color: green;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#search_box {
+    color: black;
+}
+
+
+#manual_redirect_sentence {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#manual_redirect {
+    color: purple;
+    font-size: 25px;
+}
+#manual_redirect:hover {
+    color: yellow;
+}

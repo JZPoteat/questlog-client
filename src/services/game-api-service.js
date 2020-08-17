@@ -2,6 +2,14 @@ import TokenService from "./TokenService";
 import config from "../config";
 
 const GameApiService = {
+  searchForGames(query) {
+    return fetch(`${config.API_ENDPOINT}/search?search=${query}`, {
+      headers: {
+        'content-type': 'application/json',
+      },
+    }).then(res => !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
+  },
   getGames() {
     return fetch(`${config.API_ENDPOINT}/games`, {
       headers: {

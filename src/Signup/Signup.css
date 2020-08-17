@@ -1,5 +1,5 @@
 .text_area {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 label {
@@ -18,12 +18,12 @@ label {
 
 #signup_retype_password {
   max-height: 40px;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 #signup_full_name,
 #signup_password {
-  margin-left: 13px;
+  margin-left: 15px;
 }
 .signup_button {
   background-image: linear-gradient(to bottom right, red, yellow);

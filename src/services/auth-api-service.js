@@ -3,6 +3,7 @@ import TokenService from "./TokenService";
 import IdleService from "./idle-service";
 
 const AuthApiService = {
+
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: "POST",
